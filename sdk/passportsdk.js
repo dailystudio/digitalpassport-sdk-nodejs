@@ -91,6 +91,10 @@ function PassportEndpoint(app, options) {
         this._endpoints = Object.assign({}, options.endpoints);
     }
 
+    if (options.region) {
+        this._region = options.region;
+    }
+
     this._endpoints = this._endpoints || {};
     this._endpoints.login = this._endpoints.login || '/v1/auth/login';
     this._endpoints.logout = this._endpoints.logout || '/v1/auth/logout';
@@ -100,10 +104,15 @@ function PassportEndpoint(app, options) {
     this._clientId = options.clientID;
     this._clientSecret = options.clientSecret;
 
+    let regionPart = "";
+    if (this._region) {
+        regionPart = `_${this._region}`;
+    }
+
     let self = this;
     this._oAuth2Strategy = new OAuth2Strategy({
             state: this._https, /* require session and https */
-            authorizationURL: `${this._baseUrl}/v1/passport/authorize`,
+            authorizationURL: `${this._baseUrl}/v1/passport/authorize${regionPart}`,
             tokenURL: `${this._baseUrl}/v1/passport/token`,
             clientID: this._clientId,
             clientSecret: this._clientSecret,
