@@ -1,0 +1,26 @@
+{
+  "name": "digitalpassport-sdk",
+  "version": "0.1.0",
+  "description": "DigitalPassport SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dailystudio/digitalpassport-sdk-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "digital passport"
+  ],
+  "author": "Nan YE",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/dailystudio/digitalpassport-sdk-nodejs/issues"
+  },
+  "homepage": "https://github.com/dailystudio/digitalpassport-sdk-nodejs#readme",
+  "dependencies": {
+    "devbricksx-js": "^0.5.15"
+  }
+}
